@@ -1,8 +1,8 @@
 package Progetto.Settimanale7.ProgettoSettimanale.centroDiControllo;
 
-import Progetto.Settimanale7.ProgettoSettimanale.sonde.SondaInterface;
+import Progetto.Settimanale7.ProgettoSettimanale.sonde.Warn;
 
-public class Proxy implements SondaInterface {
+public class Proxy implements Warn {
 
 	@Override
 	public void allarmNotification(String id, double latitudine, double longitudine, int lvlSmoke) {

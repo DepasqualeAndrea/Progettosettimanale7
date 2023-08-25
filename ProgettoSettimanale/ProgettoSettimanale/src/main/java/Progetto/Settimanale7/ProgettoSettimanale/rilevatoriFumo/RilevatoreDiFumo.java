@@ -12,13 +12,14 @@ public class RilevatoreDiFumo {
 	private String id;
 	private double latitudine;
 	private double longitudine;
-	private int lvlSmoke = 0;
+	private int lvlSmoke;
 	private ArrayList<AllarmNotificationProxy> sonde;
 
 	public RilevatoreDiFumo(String id, double latitudine, double longitudine) {
 		this.id = id;
 		this.latitudine = latitudine;
 		this.longitudine = longitudine;
+		this.sonde = new ArrayList<>();
 	}
 
 	@Override
@@ -27,8 +28,8 @@ public class RilevatoreDiFumo {
 	}
 
 	public void setLvlSmoke(int livello) {
-
-		if (this.lvlSmoke > 5) {
+		this.lvlSmoke = livello;
+		if (livello > 5) {
 			sendAllarm();
 		}
 	}
