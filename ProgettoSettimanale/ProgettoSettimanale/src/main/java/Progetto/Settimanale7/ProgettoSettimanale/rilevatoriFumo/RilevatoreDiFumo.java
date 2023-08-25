@@ -8,7 +8,7 @@ import lombok.Setter;
 
 @Getter
 @Setter
-public class RilevatoreDiFumo implements ControllerObs {
+public class RilevatoreDiFumo {
 	private String id;
 	private double latitudine;
 	private double longitudine;
@@ -33,14 +33,12 @@ public class RilevatoreDiFumo implements ControllerObs {
 		}
 	}
 
-	@Override
 	public void sendAllarm() {
 		for (SondaInterface k : sonde) {
 			k.update(id, latitudine, longitudine, lvlSmoke);
 		}
 	}
 
-	@Override
 	public void addSonda(SondaInterface sondaI) {
 		sonde.add(sondaI);
 	}
