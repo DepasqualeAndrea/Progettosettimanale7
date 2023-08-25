@@ -40,7 +40,7 @@ public class RilevatoreDiFumo {
 		}
 	}
 
-	public void addSonda(AllarmNotificationProxy sondaI) {
+	public void addControll(AllarmNotificationProxy sondaI) {
 		sonde.add(sondaI);
 	}
 
