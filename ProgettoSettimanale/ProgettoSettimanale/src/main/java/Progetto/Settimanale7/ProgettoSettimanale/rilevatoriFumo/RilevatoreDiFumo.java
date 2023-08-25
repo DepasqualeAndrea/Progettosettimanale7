@@ -1,8 +1,8 @@
 package Progetto.Settimanale7.ProgettoSettimanale.rilevatoriFumo;
 
-import java.util.Set;
+import java.util.ArrayList;
 
-import Progetto.Settimanale7.ProgettoSettimanale.sonde.SondaInterface;
+import Progetto.Settimanale7.ProgettoSettimanale.centroDiControllo.AllarmNotificationProxy;
 import lombok.Getter;
 import lombok.Setter;
 
@@ -13,7 +13,7 @@ public class RilevatoreDiFumo {
 	private double latitudine;
 	private double longitudine;
 	private int lvlSmoke = 0;
-	private Set<SondaInterface> sonde;
+	private ArrayList<AllarmNotificationProxy> sonde;
 
 	public RilevatoreDiFumo(String id, double latitudine, double longitudine) {
 		this.id = id;
@@ -34,12 +34,12 @@ public class RilevatoreDiFumo {
 	}
 
 	public void sendAllarm() {
-		for (SondaInterface k : sonde) {
+		for (AllarmNotificationProxy k : sonde) {
 			k.update(id, latitudine, longitudine, lvlSmoke);
 		}
 	}
 
-	public void addSonda(SondaInterface sondaI) {
+	public void addSonda(AllarmNotificationProxy sondaI) {
 		sonde.add(sondaI);
 	}
 
